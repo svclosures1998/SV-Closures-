@@ -12,6 +12,7 @@ const navLinks = [
   { name: 'Products', href: '#products' },
   { name: 'Industries', href: '#industries' },
   { name: 'Development', href: '#infrastructure' },
+  { name: 'MIM', href: '#mim' },
   { name: 'Sustainability', href: '#sustainability' },
   { name: 'Global Reach', href: '#global-reach' },
   { name: 'Gallery', href: '#gallery' },
@@ -62,7 +63,7 @@ export function Navbar() {
     window.addEventListener('scroll-to-section', handleScrollToSectionEvent);
 
     // 3. High-Performance IntersectionObserver for Scroll Spy
-    const sections = ['home', 'about', 'products', 'industries', 'infrastructure', 'sustainability', 'global-reach', 'gallery', 'contact'];
+    const sections = ['home', 'about', 'products', 'industries', 'infrastructure', 'mim', 'sustainability', 'global-reach', 'gallery', 'contact'];
     
     const observerOptions = {
       root: null,

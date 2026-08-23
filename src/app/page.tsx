@@ -9,6 +9,7 @@ import AboutSection from '@/components/AboutSection';
 import IndustriesSection from '@/components/IndustriesSection';
 import ProductsSection from '@/components/ProductsSection';
 import InfrastructureSection from '@/components/InfrastructureSection';
+import MimSection from '@/components/MimSection';
 import SustainabilitySection from '@/components/SustainabilitySection';
 import GlobalReachMap from '@/components/GlobalReachMap';
 import Certifications from '@/components/Certifications';
@@ -19,13 +20,13 @@ import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Chatbot } from '@/components/Chatbot';
 
 
-type ActiveViewType = 'all' | 'home' | 'about' | 'products' | 'industries' | 'infrastructure' | 'sustainability' | 'global-reach' | 'gallery' | 'contact';
+type ActiveViewType = 'all' | 'home' | 'about' | 'products' | 'industries' | 'infrastructure' | 'mim' | 'sustainability' | 'global-reach' | 'gallery' | 'contact';
 
 export default function Home() {
   const [activeView, setActiveView] = useState<ActiveViewType>('home');
 
   useEffect(() => {
-    const validSections = ['home', 'about', 'products', 'packaging', 'industries', 'infrastructure', 'sustainability', 'global-reach', 'gallery', 'contact'];
+    const validSections = ['home', 'about', 'products', 'packaging', 'industries', 'infrastructure', 'mim', 'sustainability', 'global-reach', 'gallery', 'contact'];
 
     // 1. Initial URL hash check (safe for client side execution)
     const checkHash = () => {
@@ -109,6 +110,7 @@ export default function Home() {
               <AboutSection />
               <IndustriesSection />
               <InfrastructureSection />
+              <MimSection />
               <SustainabilitySection />
               <Certifications />
               <GallerySection />
@@ -176,6 +178,18 @@ export default function Home() {
               transition={{ duration: 0.4, ease: 'easeInOut' }}
             >
               <InfrastructureSection />
+            </motion.div>
+          )}
+
+          {activeView === 'mim' && (
+            <motion.div
+              key="mim-view"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
+            >
+              <MimSection />
             </motion.div>
           )}
 
