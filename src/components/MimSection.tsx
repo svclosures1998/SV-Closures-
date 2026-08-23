@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Cpu, Layers, ShieldCheck, Zap, Activity } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function MimSection() {
   const handleScrollToSection = (sectionId: string) => {
@@ -52,42 +52,32 @@ export default function MimSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
         
         {/* ========================================================================= */}
-        {/* SECTION 1 - HERO */}
+        {/* SECTION 1 — MIM HERO */}
         {/* ========================================================================= */}
-        <div className="relative rounded-3xl overflow-hidden glass-card shadow-xl border border-slate-200/10">
-          <div className="relative w-full aspect-[16/10] sm:aspect-[21/9] md:aspect-[21/7.5] lg:aspect-[21/7]">
+        <div className="relative rounded-3xl overflow-hidden glass-card shadow-xl border border-slate-200/10 flex flex-col">
+          {/* Hero Image */}
+          <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] md:aspect-[21/7.5] lg:aspect-[21/6.5]">
             <Image
-              src="/images/gallery_injection_molding_v2.jpg"
-              alt="Metal Injection Moulding Machinery"
+              src="/images/mim-hero-components.jpg"
+              alt="MIM Precision Components Hero"
               fill
               className="object-cover"
               priority
             />
+            {/* Overlay to ensure text readability */}
+            <div className="absolute inset-0 bg-slate-950/45 dark:bg-slate-950/55" />
           </div>
-          {/* Text & Button Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-transparent dark:from-slate-950/95 dark:via-slate-950/75 dark:to-transparent flex items-center py-6 sm:py-8 lg:py-10">
-            <div className="max-w-xl md:max-w-2xl px-6 md:px-12 space-y-4 md:space-y-6">
-              <div className="inline-block px-3 py-1 rounded-full bg-primary-blue/10 dark:bg-primary-green/10 text-primary-blue dark:text-primary-green text-[10px] sm:text-xs font-semibold tracking-wider uppercase">
-                New Manufacturing Capability
-              </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
-                METAL INJECTION MOULDING (MIM)
-              </h2>
-              <h3 className="text-xs sm:text-sm md:text-base font-semibold text-primary-blue dark:text-primary-green leading-snug">
-                Where Injection Moulding Expertise Meets Metallurgical Innovation.
-              </h3>
-              <p className="text-[10px] sm:text-xs md:text-sm text-text-light dark:text-slate-300 font-light max-w-md leading-relaxed">
-                Precision Components. Complex Geometries. Advanced Manufacturing.
-              </p>
-              <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2">
-                <button
-                  onClick={() => handleScrollToSection('mim-foundation')}
-                  className="px-5 py-2.5 bg-gradient-to-r from-primary-blue to-primary-green hover:from-primary-green hover:to-primary-blue text-white font-bold text-[10px] md:text-xs tracking-wider rounded-xl uppercase transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md shadow-primary-blue/20 dark:shadow-primary-green/10 cursor-pointer"
-                >
-                  Explore Solution
-                </button>
-              </div>
-            </div>
+          {/* Hero Content Overlay */}
+          <div className="p-8 sm:p-10 lg:p-12 space-y-4 bg-white/95 dark:bg-slate-900/95 border-t border-slate-100 dark:border-slate-800">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
+              METAL INJECTION MOULDING (MIM)
+            </h2>
+            <h3 className="text-sm sm:text-base md:text-lg font-semibold text-primary-blue dark:text-primary-green leading-snug">
+              Where Injection Moulding Expertise Meets Metallurgical Innovation.
+            </h3>
+            <p className="text-xs sm:text-sm text-text-light dark:text-slate-300 font-medium">
+              Precision Components. Complex Geometries. Advanced Manufacturing.
+            </p>
           </div>
         </div>
 
@@ -95,43 +85,44 @@ export default function MimSection() {
         {/* SECTION 2 — OUR FOUNDATION */}
         {/* ========================================================================= */}
         <div id="mim-foundation" className="scroll-mt-24 space-y-12">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+              OUR FOUNDATION
+            </h3>
+            <h4 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
+              25+ YEARS OF MOULDING EXPERIENCE. A NEW DIRECTION IN ADVANCED MANUFACTURING.
+            </h4>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.7 }}
-              className="lg:col-span-7 space-y-6"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-7 space-y-4 text-text-light dark:text-slate-300 font-light leading-relaxed text-sm"
             >
-              <div className="inline-flex items-center gap-2 text-primary-blue dark:text-primary-green font-semibold text-sm tracking-wider uppercase">
-                <Layers className="w-5 h-5" />
-                Our Foundation
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
-                25+ YEARS OF MOULDING EXPERIENCE. A NEW DIRECTION IN ADVANCED MANUFACTURING.
-              </h3>
-              <div className="space-y-4 text-text-light dark:text-slate-300 font-light leading-relaxed text-sm">
-                <p>
-                  SV Closures Private Limited is expanding its manufacturing and technology development capabilities towards advanced precision component manufacturing.
-                </p>
-                <p>
-                  By combining 25+ years of injection moulding experience with our understanding of metallurgy and metal processing, we are building a strong foundation for the development of Metal Injection Moulding technology.
-                </p>
-              </div>
+              <p>
+                SV Closures Private Limited is expanding its manufacturing and technology development capabilities towards advanced precision component manufacturing.
+              </p>
+              <p>
+                By combining 25+ years of injection moulding experience with our understanding of metallurgy and metal processing, we are building a strong foundation for the development of Metal Injection Moulding technology.
+              </p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.7 }}
-              className="lg:col-span-5 relative aspect-[4/3] rounded-3xl overflow-hidden glass-card shadow-xl border border-slate-200/10"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-5 relative aspect-[4/3] rounded-3xl overflow-hidden glass-card shadow-md border border-slate-200/10"
             >
               <Image
-                src="/images/gallery_milacron_molds.jpg"
-                alt="Precision Tooling and Moulds"
+                src="/images/mim-components.jpg"
+                alt="MIM Components Foundation"
                 fill
                 className="object-cover"
+                loading="lazy"
               />
             </motion.div>
           </div>
@@ -141,20 +132,20 @@ export default function MimSection() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {/* Card 1 */}
             <motion.div
               variants={cardVariants}
               whileHover={{ y: -8 }}
-              className="group relative glass-card rounded-3xl overflow-hidden flex flex-col hover:shadow-2xl hover:shadow-primary-blue/20 dark:hover:shadow-primary-green/20 p-[1px] bg-gradient-to-b from-primary-blue/15 to-primary-green/15 hover:from-primary-blue/35 hover:to-primary-green/35 duration-300"
+              className="group relative glass-card rounded-3xl overflow-hidden flex flex-col p-[1px] bg-gradient-to-b from-primary-blue/15 to-primary-green/15 hover:from-primary-blue/35 hover:to-primary-green/35 duration-300 shadow-sm"
             >
-              <div className="bg-white/90 dark:bg-slate-900/90 rounded-[23px] p-6 space-y-4 flex flex-col justify-between h-full">
-                <div className="space-y-2">
-                  <h4 className="text-3xl font-extrabold text-primary-blue dark:text-primary-green">25+ YEARS</h4>
-                  <p className="text-sm font-semibold tracking-wider uppercase text-text-dark dark:text-white">Injection Moulding Experience</p>
-                </div>
+              <div className="bg-white/90 dark:bg-slate-900/90 rounded-[23px] p-6 space-y-3 flex-grow flex flex-col justify-center">
+                <h4 className="text-3xl font-extrabold text-primary-blue dark:text-primary-green">25+ YEARS</h4>
+                <p className="text-xs font-bold tracking-wider uppercase text-text-dark dark:text-white leading-snug">
+                  Injection Moulding Experience
+                </p>
               </div>
             </motion.div>
 
@@ -162,13 +153,13 @@ export default function MimSection() {
             <motion.div
               variants={cardVariants}
               whileHover={{ y: -8 }}
-              className="group relative glass-card rounded-3xl overflow-hidden flex flex-col hover:shadow-2xl hover:shadow-primary-blue/20 dark:hover:shadow-primary-green/20 p-[1px] bg-gradient-to-b from-primary-blue/15 to-primary-green/15 hover:from-primary-blue/35 hover:to-primary-green/35 duration-300"
+              className="group relative glass-card rounded-3xl overflow-hidden flex flex-col p-[1px] bg-gradient-to-b from-primary-blue/15 to-primary-green/15 hover:from-primary-blue/35 hover:to-primary-green/35 duration-300 shadow-sm"
             >
-              <div className="bg-white/90 dark:bg-slate-900/90 rounded-[23px] p-6 space-y-4 flex flex-col justify-between h-full">
-                <div className="space-y-2">
-                  <h4 className="text-3xl font-extrabold text-primary-blue dark:text-primary-green">ISO 9001:2015</h4>
-                  <p className="text-sm font-semibold tracking-wider uppercase text-text-dark dark:text-white">Quality Management System</p>
-                </div>
+              <div className="bg-white/90 dark:bg-slate-900/90 rounded-[23px] p-6 space-y-3 flex-grow flex flex-col justify-center">
+                <h4 className="text-3xl font-extrabold text-primary-blue dark:text-primary-green">ISO 9001:2015</h4>
+                <p className="text-xs font-bold tracking-wider uppercase text-text-dark dark:text-white leading-snug">
+                  Quality Management System
+                </p>
               </div>
             </motion.div>
 
@@ -176,13 +167,13 @@ export default function MimSection() {
             <motion.div
               variants={cardVariants}
               whileHover={{ y: -8 }}
-              className="group relative glass-card rounded-3xl overflow-hidden flex flex-col hover:shadow-2xl hover:shadow-primary-blue/20 dark:hover:shadow-primary-green/20 p-[1px] bg-gradient-to-b from-primary-blue/15 to-primary-green/15 hover:from-primary-blue/35 hover:to-primary-green/35 duration-300"
+              className="group relative glass-card rounded-3xl overflow-hidden flex flex-col p-[1px] bg-gradient-to-b from-primary-blue/15 to-primary-green/15 hover:from-primary-blue/35 hover:to-primary-green/35 duration-300 shadow-sm"
             >
-              <div className="bg-white/90 dark:bg-slate-900/90 rounded-[23px] p-6 space-y-4 flex flex-col justify-between h-full">
-                <div className="space-y-2">
-                  <h4 className="text-2xl font-extrabold text-primary-blue dark:text-primary-green">PRECISION + METALLURGY</h4>
-                  <p className="text-sm font-semibold tracking-wider uppercase text-text-dark dark:text-white">A Combined Manufacturing Foundation</p>
-                </div>
+              <div className="bg-white/90 dark:bg-slate-900/90 rounded-[23px] p-6 space-y-3 flex-grow flex flex-col justify-center">
+                <h4 className="text-xl font-extrabold text-primary-blue dark:text-primary-green">PRECISION + METALLURGY</h4>
+                <p className="text-xs font-bold tracking-wider uppercase text-text-dark dark:text-white leading-snug">
+                  A Combined Manufacturing Foundation
+                </p>
               </div>
             </motion.div>
           </motion.div>
@@ -191,77 +182,118 @@ export default function MimSection() {
         {/* ========================================================================= */}
         {/* SECTION 3 — WHAT IS METAL INJECTION MOULDING? */}
         {/* ========================================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-6 space-y-6"
-          >
-            <div className="inline-flex items-center gap-2 text-primary-blue dark:text-primary-green font-semibold text-sm tracking-wider uppercase">
-              <Cpu className="w-5 h-5" />
-              Technology Overview
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
-              FROM METAL POWDER TO PRECISION COMPONENT.
+        <div className="space-y-12">
+          <div className="text-center max-w-3xl mx-auto">
+            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+              WHAT IS METAL INJECTION MOULDING?
             </h3>
+          </div>
+
+          {/* Process diagrams stack */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative rounded-2xl overflow-hidden aspect-[4/3] glass-card border border-slate-200/10 shadow-md bg-white p-4"
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/mim-process-real.jpg"
+                  alt="MIM Process Real Diagram"
+                  fill
+                  className="object-contain"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="relative rounded-2xl overflow-hidden aspect-[4/3] glass-card border border-slate-200/10 shadow-md bg-white p-4"
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/mim-process-illustration.jpg"
+                  alt="MIM Process Illustration"
+                  fill
+                  className="object-contain"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <h4 className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
+              FROM METAL POWDER TO PRECISION COMPONENT.
+            </h4>
             <p className="text-base text-text-light dark:text-slate-300 font-light leading-relaxed">
               Metal Injection Moulding combines the design flexibility of injection moulding with the material properties of metals.
             </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-6"
-          >
-            {/* Visual illustration box representing mixing -> moulding -> sintering */}
-            <div className="relative glass-card rounded-3xl p-8 border border-primary-blue/15 dark:border-primary-green/15 shadow-xl bg-gradient-to-b from-white/80 to-white/40 dark:from-slate-900/80 dark:to-slate-900/40 p-[1px] bg-gradient-to-b from-primary-blue/10 to-primary-green/10">
-              <div className="bg-white/90 dark:bg-slate-900/90 rounded-[23px] p-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.1))] -z-10 opacity-30 dark:opacity-10" />
-                <div className="flex flex-col sm:flex-row items-center justify-around gap-6 text-center">
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-full bg-primary-blue/10 dark:bg-primary-blue/20 flex items-center justify-center text-primary-blue font-bold">1</div>
-                    <span className="text-xs font-bold tracking-wider text-text-dark dark:text-white uppercase">Metal Powder</span>
-                  </div>
-                  <div className="text-slate-300 font-bold text-2xl hidden sm:block">+</div>
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-full bg-primary-green/10 dark:bg-primary-green/20 flex items-center justify-center text-primary-green font-bold">2</div>
-                    <span className="text-xs font-bold tracking-wider text-text-dark dark:text-white uppercase">Injection Moulding</span>
-                  </div>
-                  <div className="text-slate-300 font-bold text-2xl hidden sm:block">=</div>
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary-blue to-primary-green flex items-center justify-center text-white font-bold">3</div>
-                    <span className="text-xs font-bold tracking-wider text-text-dark dark:text-white uppercase">Precision Metal</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* ========================================================================= */}
         {/* SECTION 4 — WHY MIM? */}
         {/* ========================================================================= */}
         <div className="space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center gap-2 text-primary-blue dark:text-primary-green font-semibold text-sm tracking-wider uppercase">
-              <Zap className="w-5 h-5" />
-              MIM Advantages
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
-              COMPLEXITY. PRECISION. POSSIBILITY.
+          <div className="text-center max-w-3xl mx-auto">
+            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+              WHY MIM?
             </h3>
+          </div>
+
+          {/* Pre-heading images */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative rounded-2xl overflow-hidden aspect-[4/3] glass-card border border-slate-200/10 shadow-md"
+            >
+              <Image
+                src="/images/mim-why-mim-components.jpg"
+                alt="Precision MIM Components"
+                fill
+                className="object-cover"
+                loading="lazy"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="relative rounded-2xl overflow-hidden aspect-[4/3] glass-card border border-slate-200/10 shadow-md"
+            >
+              <Image
+                src="/images/mim-why-mim-gears.jpg"
+                alt="Precision Gears and Components"
+                fill
+                className="object-cover"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
+
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <h4 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
+              COMPLEXITY. PRECISION. POSSIBILITY.
+            </h4>
           </div>
 
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {[
@@ -276,12 +308,12 @@ export default function MimSection() {
                 key={idx}
                 variants={cardVariants}
                 whileHover={{ y: -6 }}
-                className="group relative glass-card rounded-3xl overflow-hidden flex flex-col p-[1px] bg-gradient-to-b from-primary-blue/10 to-primary-green/10 hover:from-primary-blue/30 hover:to-primary-green/30 duration-300"
+                className="group relative glass-card rounded-3xl overflow-hidden flex flex-col p-[1px] bg-gradient-to-b from-primary-blue/10 to-primary-green/10 hover:from-primary-blue/30 hover:to-primary-green/30 duration-300 shadow-sm"
               >
                 <div className="bg-white/95 dark:bg-slate-900/95 rounded-[23px] p-6 space-y-3 flex-grow flex flex-col justify-start">
                   <div className="flex items-center gap-2">
                     <span className="text-primary-blue dark:text-primary-green text-lg font-bold">◉</span>
-                    <h4 className="text-base font-bold text-text-dark dark:text-white">{item.title}</h4>
+                    <h5 className="text-base font-bold text-text-dark dark:text-white">{item.title}</h5>
                   </div>
                   <p className="text-xs text-text-light dark:text-slate-400 font-light leading-relaxed">{item.desc}</p>
                 </div>
@@ -294,10 +326,13 @@ export default function MimSection() {
         {/* SECTION 5 — WHY SV CLOSURES? */}
         {/* ========================================================================= */}
         <div className="space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
-              TWO MANUFACTURING WORLDS. ONE TECHNOLOGY.
+          <div className="text-center max-w-3xl mx-auto space-y-2">
+            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+              WHY SV CLOSURES?
             </h3>
+            <h4 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
+              TWO MANUFACTURING WORLDS. ONE TECHNOLOGY.
+            </h4>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -309,12 +344,12 @@ export default function MimSection() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-5 flex flex-col items-center justify-center p-6 rounded-3xl glass-card border border-primary-blue/15 dark:border-primary-green/15"
             >
-              <div className="w-full space-y-6 flex flex-col items-center text-center">
+              <div className="w-full space-y-5 flex flex-col items-center text-center">
                 <div className="px-4 py-3 rounded-2xl bg-primary-blue/10 dark:bg-primary-blue/20 border border-primary-blue/20 text-text-dark dark:text-white font-bold text-xs sm:text-sm tracking-wider uppercase w-full">
                   INJECTION MOULDING EXPERIENCE
                 </div>
                 
-                <div className="text-slate-400 font-bold text-xl">+</div>
+                <div className="text-slate-400 dark:text-slate-500 font-bold text-2xl">+</div>
 
                 <div className="px-4 py-3 rounded-2xl bg-primary-blue/10 dark:bg-primary-blue/20 border border-primary-blue/20 text-text-dark dark:text-white font-bold text-xs sm:text-sm tracking-wider uppercase w-full">
                   METALLURGICAL UNDERSTANDING
@@ -344,11 +379,11 @@ export default function MimSection() {
                 'ISO 9001:2015 Certified',
                 'Development-Oriented Manufacturing Approach',
               ].map((point, index) => (
-                <div key={index} className="flex items-start gap-3 bg-white/40 dark:bg-slate-900/40 p-3.5 rounded-2xl border border-slate-100 dark:border-slate-800/80 shadow-sm">
+                <div key={index} className="flex items-start gap-3 bg-white/40 dark:bg-slate-900/40 p-3.5 rounded-2xl border border-slate-100 dark:border-slate-800/85 shadow-sm">
                   <div className="w-6 h-6 rounded-full bg-primary-green/10 dark:bg-primary-green/20 flex items-center justify-center text-primary-green shrink-0 mt-0.5">
                     <span className="text-[10px] font-bold">{index + 1}</span>
                   </div>
-                  <p className="text-sm font-medium text-text-dark dark:text-slate-300">{point}</p>
+                  <p className="text-sm font-semibold text-text-dark dark:text-slate-300">{point}</p>
                 </div>
               ))}
             </motion.div>
@@ -359,21 +394,20 @@ export default function MimSection() {
         {/* SECTION 6 — APPLICATIONS */}
         {/* ========================================================================= */}
         <div className="space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center gap-2 text-primary-blue dark:text-primary-green font-semibold text-sm tracking-wider uppercase">
-              <Activity className="w-5 h-5" />
-              Target Sectors
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
-              ENGINEERED FOR DEMANDING APPLICATIONS.
+          <div className="text-center max-w-3xl mx-auto space-y-2">
+            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+              APPLICATIONS
             </h3>
+            <h4 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
+              ENGINEERED FOR DEMANDING APPLICATIONS.
+            </h4>
           </div>
 
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true }}
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
           >
             {[
@@ -388,7 +422,7 @@ export default function MimSection() {
                 key={idx}
                 variants={cardVariants}
                 whileHover={{ scale: 1.05 }}
-                className="group relative glass-card rounded-3xl overflow-hidden flex flex-col p-[1px] bg-gradient-to-b from-primary-blue/10 to-primary-green/10 hover:from-primary-blue/30 hover:to-primary-green/30 duration-300"
+                className="group relative glass-card rounded-3xl overflow-hidden flex flex-col p-[1px] bg-gradient-to-b from-primary-blue/10 to-primary-green/10 hover:from-primary-blue/30 hover:to-primary-green/30 duration-300 shadow-sm"
               >
                 <div className="bg-white/95 dark:bg-slate-900/95 rounded-[23px] p-5 text-center flex flex-col items-center justify-center gap-3 aspect-square">
                   <span className="text-3xl sm:text-4xl" role="img" aria-label={app.name.toLowerCase()}>
@@ -407,29 +441,29 @@ export default function MimSection() {
         {/* SECTION 7 — CUSTOM TESTING SYSTEMS */}
         {/* ========================================================================= */}
         <div className="space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-2">
+            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+              CUSTOM TESTING SYSTEMS
+            </h3>
+            <h4 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
+              YOUR COMPONENT. YOUR REQUIREMENT. YOUR TESTING APPROACH.
+            </h4>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-6 space-y-6"
+              className="lg:col-span-6 space-y-4 text-text-light dark:text-slate-300 font-light leading-relaxed text-sm"
             >
-              <div className="inline-flex items-center gap-2 text-primary-blue dark:text-primary-green font-semibold text-sm tracking-wider uppercase">
-                <ShieldCheck className="w-5 h-5" />
-                Quality Assurance
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
-                YOUR COMPONENT. YOUR REQUIREMENT. YOUR TESTING APPROACH.
-              </h3>
-              <div className="space-y-4 text-text-light dark:text-slate-300 font-light leading-relaxed text-sm">
-                <p>
-                  Not every component can be evaluated using a standard test.
-                </p>
-                <p>
-                  Based on functional requirements, we can evaluate and develop application-specific testing and validation systems.
-                </p>
-              </div>
+              <p>
+                Not every component can be evaluated using a standard test.
+              </p>
+              <p>
+                Based on functional requirements, we can evaluate and develop application-specific testing and validation systems.
+              </p>
             </motion.div>
 
             <motion.div
@@ -439,9 +473,9 @@ export default function MimSection() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-6 space-y-4"
             >
-              <h4 className="text-xs sm:text-sm font-extrabold text-text-dark dark:text-white tracking-widest uppercase mb-2">
+              <h5 className="text-xs sm:text-sm font-extrabold text-text-dark dark:text-white tracking-widest uppercase mb-2">
                 Testing possibilities:
-              </h4>
+              </h5>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   'Dimensional Verification',
@@ -462,37 +496,6 @@ export default function MimSection() {
               </div>
             </motion.div>
           </div>
-
-          {/* Lab context images reuse */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
-            {[
-              { src: '/images/testing_chemical_v2.jpg', alt: 'Material & Chemical Compatibility', label: 'Material & Chemical Compatibility', fit: 'object-cover' },
-              { src: '/images/testing_vacuum_v2.jpg', alt: 'Functional & Leak Testing', label: 'Functional Testing', fit: 'object-contain bg-slate-50 dark:bg-slate-950/40' },
-              { src: '/images/testing_torque_v2.jpg', alt: 'Load & Strength Testing', label: 'Load & Strength Testing', fit: 'object-contain bg-slate-50 dark:bg-slate-950/40' },
-            ].map((img, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -6 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative rounded-2xl overflow-hidden aspect-[4/3] glass-card border border-slate-200/10 shadow-md"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className={`${img.fit} group-hover:scale-105 transition-transform duration-500`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex items-end p-4">
-                  <span className="text-xs font-bold text-white tracking-wide uppercase">
-                    {img.label}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
 
         {/* ========================================================================= */}
@@ -511,9 +514,12 @@ export default function MimSection() {
             <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary-blue/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-primary-green/10 rounded-full blur-3xl pointer-events-none" />
 
-            <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-text-dark dark:text-white uppercase">
-              HAVE A COMPLEX COMPONENT IN MIND?
+            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+              CONTACT US
             </h3>
+            <h4 className="text-xl sm:text-2xl font-bold tracking-tight text-text-dark dark:text-white uppercase">
+              HAVE A COMPLEX COMPONENT IN MIND?
+            </h4>
             <p className="text-sm text-text-light dark:text-slate-400 font-light max-w-xl mx-auto">
               {"LET'S EXPLORE THE RIGHT MANUFACTURING SOLUTION."}
             </p>
