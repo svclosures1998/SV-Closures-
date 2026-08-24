@@ -54,7 +54,7 @@ export default function MimSection() {
         {/* ========================================================================= */}
         {/* SECTION 1 — MIM HERO */}
         {/* ========================================================================= */}
-        <div className="relative rounded-3xl overflow-hidden glass-card shadow-xl border border-slate-200/10 flex flex-col">
+        <div className="relative rounded-3xl overflow-hidden glass-card shadow-xl border border-slate-200/10 flex flex-col bg-white dark:bg-slate-900">
           {/* Hero Image */}
           <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] md:aspect-[21/7.5] lg:aspect-[21/6.5]">
             <Image
@@ -64,18 +64,16 @@ export default function MimSection() {
               className="object-cover"
               priority
             />
-            {/* Overlay to ensure text readability */}
-            <div className="absolute inset-0 bg-slate-950/45 dark:bg-slate-950/55" />
           </div>
-          {/* Hero Content Overlay */}
-          <div className="p-8 sm:p-10 lg:p-12 space-y-4 bg-white/95 dark:bg-slate-900/95 border-t border-slate-100 dark:border-slate-800">
+          {/* Hero Content */}
+          <div className="p-8 sm:p-10 lg:p-12 space-y-3 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
               METAL INJECTION MOULDING (MIM)
             </h2>
-            <h3 className="text-sm sm:text-base md:text-lg font-semibold text-primary-blue dark:text-primary-green leading-snug">
+            <h3 className="text-base sm:text-lg font-bold text-primary-blue dark:text-primary-green leading-snug">
               Where Injection Moulding Expertise Meets Metallurgical Innovation.
             </h3>
-            <p className="text-xs sm:text-sm text-text-light dark:text-slate-300 font-medium">
+            <p className="text-sm text-text-light dark:text-slate-400 font-medium">
               Precision Components. Complex Geometries. Advanced Manufacturing.
             </p>
           </div>
@@ -86,7 +84,7 @@ export default function MimSection() {
         {/* ========================================================================= */}
         <div id="mim-foundation" className="scroll-mt-24 space-y-12">
           <div className="text-center max-w-3xl mx-auto mb-8">
-            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-primary-green dark:from-primary-green dark:to-primary-blue tracking-tight uppercase mb-4 drop-shadow-sm">
               OUR FOUNDATION
             </h3>
             <h4 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
@@ -100,14 +98,18 @@ export default function MimSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-7 space-y-4 text-text-light dark:text-slate-300 font-light leading-relaxed text-sm"
+              className="lg:col-span-7 h-full"
             >
-              <p>
-                SV Closures Private Limited is expanding its manufacturing and technology development capabilities towards advanced precision component manufacturing.
-              </p>
-              <p>
-                By combining 25+ years of injection moulding experience with our understanding of metallurgy and metal processing, we are building a strong foundation for the development of Metal Injection Moulding technology.
-              </p>
+              <div className="group relative glass-card rounded-3xl overflow-hidden flex flex-col p-[1px] bg-gradient-to-b from-primary-blue/15 to-primary-green/15 hover:from-primary-blue/35 hover:to-primary-green/35 duration-300 shadow-sm h-full">
+                <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-[23px] p-8 sm:p-10 lg:p-12 space-y-6 flex-grow flex flex-col justify-center text-text-dark dark:text-slate-200 font-medium leading-relaxed text-base sm:text-lg">
+                  <p>
+                    SV Closures Private Limited is expanding its manufacturing and technology development capabilities towards advanced precision component manufacturing.
+                  </p>
+                  <p>
+                    By combining 25+ years of injection moulding experience with our understanding of metallurgy and metal processing, we are building a strong foundation for the development of Metal Injection Moulding technology.
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -184,7 +186,7 @@ export default function MimSection() {
         {/* ========================================================================= */}
         <div className="space-y-12">
           <div className="text-center max-w-3xl mx-auto">
-            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-primary-green dark:from-primary-green dark:to-primary-blue tracking-tight uppercase mb-4 drop-shadow-sm">
               WHAT IS METAL INJECTION MOULDING?
             </h3>
           </div>
@@ -243,7 +245,7 @@ export default function MimSection() {
         {/* ========================================================================= */}
         <div className="space-y-12">
           <div className="text-center max-w-3xl mx-auto">
-            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-primary-green dark:from-primary-green dark:to-primary-blue tracking-tight uppercase mb-4 drop-shadow-sm">
               WHY MIM?
             </h3>
           </div>
@@ -327,7 +329,7 @@ export default function MimSection() {
         {/* ========================================================================= */}
         <div className="space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-2">
-            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-primary-green dark:from-primary-green dark:to-primary-blue tracking-tight uppercase mb-4 drop-shadow-sm">
               WHY SV CLOSURES?
             </h3>
             <h4 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
@@ -395,7 +397,7 @@ export default function MimSection() {
         {/* ========================================================================= */}
         <div className="space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-2">
-            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-primary-green dark:from-primary-green dark:to-primary-blue tracking-tight uppercase mb-4 drop-shadow-sm">
               APPLICATIONS
             </h3>
             <h4 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
@@ -442,7 +444,7 @@ export default function MimSection() {
         {/* ========================================================================= */}
         <div className="space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-2">
-            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-primary-green dark:from-primary-green dark:to-primary-blue tracking-tight uppercase mb-4 drop-shadow-sm">
               CUSTOM TESTING SYSTEMS
             </h3>
             <h4 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-text-dark dark:text-white uppercase leading-tight">
@@ -514,7 +516,7 @@ export default function MimSection() {
             <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary-blue/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-primary-green/10 rounded-full blur-3xl pointer-events-none" />
 
-            <h3 className="text-xs sm:text-sm font-extrabold text-primary-blue dark:text-primary-green tracking-widest uppercase mb-2">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-primary-green dark:from-primary-green dark:to-primary-blue tracking-tight uppercase mb-4 drop-shadow-sm">
               CONTACT US
             </h3>
             <h4 className="text-xl sm:text-2xl font-bold tracking-tight text-text-dark dark:text-white uppercase">
